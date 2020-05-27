@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Header.scss'
+import {MenuItem} from '../../components';
 
 const Header = (props) => {
+
   return (
     <header className='header'>
       <div className='content'>
@@ -21,7 +23,9 @@ const Header = (props) => {
 
         </div>
         <nav className='header__nav'>
-
+          <ul className='header__nav-list'>
+            <MenuItem/>
+          </ul>
         </nav>
       </div>
     </header>
@@ -29,3 +33,25 @@ const Header = (props) => {
 }
 
 export default Header
+
+// <Link href='/about'>
+//   <a>Об учреждении</a>
+// </Link>
+// <Link href='/about'>
+// <a>Документы</a>
+// </Link>
+// <Link href='/about'>
+// <a>Навигация</a>
+// </Link>
+// <Link href='/about'>
+// <a>Служба капитана Московского бассейна ВВП</a>
+// </Link>
+// <Link href='/about'>
+// <a>Услуги</a>
+// </Link>
+// <Link href='/about'>
+// <a>Медиацентр</a>
+// </Link>
+// <Link href='/about'>
+// <a>Контакты</a>
+// </Link>

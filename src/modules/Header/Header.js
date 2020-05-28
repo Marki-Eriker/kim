@@ -2,12 +2,15 @@ import React, {useState} from 'react'
 import './Header.scss'
 import {MenuItem} from '../../components';
 
-const Header = (props) => {
+
+const Header = ({menu}) => {
+
+  const [open, setOpen] = useState(null)
 
   return (
     <header className='header'>
       <div className='content'>
-        <div className='header__top'>
+        <div className='header__top' onMouseEnter={() => setOpen(null)}>
 
           <div className='header__logo'>
             <img src='logo.png' alt='logo'/>
@@ -24,7 +27,9 @@ const Header = (props) => {
         </div>
         <nav className='header__nav'>
           <ul className='header__nav-list'>
-            <MenuItem/>
+            {menu.map((item, index) => (
+              <MenuItem item={item} setOpen={setOpen} index={index} isOpen={index === open}/>
+              ))}
           </ul>
         </nav>
       </div>
@@ -33,25 +38,3 @@ const Header = (props) => {
 }
 
 export default Header
-
-// <Link href='/about'>
-//   <a>Об учреждении</a>
-// </Link>
-// <Link href='/about'>
-// <a>Документы</a>
-// </Link>
-// <Link href='/about'>
-// <a>Навигация</a>
-// </Link>
-// <Link href='/about'>
-// <a>Служба капитана Московского бассейна ВВП</a>
-// </Link>
-// <Link href='/about'>
-// <a>Услуги</a>
-// </Link>
-// <Link href='/about'>
-// <a>Медиацентр</a>
-// </Link>
-// <Link href='/about'>
-// <a>Контакты</a>
-// </Link>

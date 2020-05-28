@@ -1,42 +1,37 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './MenuItem.scss'
 import cn from 'classnames'
 import Link from 'next/link';
 
-const MenuItem = (props) => {
-
-  const [isHide, setHide] = useState(true)
+const MenuItem = ({item, setOpen, index, isOpen}) => {
 
   const openMenu = () => {
-    setHide(false)
+    setOpen(index)
   }
 
   const closeMenu = () => {
-    setHide(true)
+    setOpen(null)
   }
 
   return (
     <li className='menu-item'>
-      <Link href='/about' >
-        <a className='nav__link' onMouseEnter={openMenu}>Об учреждении</a>
+      <Link href={item.href} >
+        <a className='nav__link' onMouseEnter={openMenu}>{item.title}</a>
       </Link>
-      <ul className={cn('menu-item__sub', {'menu-item__sub--hide': isHide})} onMouseLeave={closeMenu}>
-        <li>
-          <Link href='/about'>
-            <a>Общая информация</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/about'>
-            <a>Структура и руководство</a>
-          </Link>
-        </li>
-        <li>
-          <Link href='/about'>
-            <a>Филиалы</a>
-          </Link>
-        </li>
-      </ul>
+
+      {item.subItems &&
+        <ul className={cn('menu-item__sub', {'menu-item__sub--hide': !isOpen})} onMouseLeave={closeMenu}>
+          <div className='content'>
+            {item.subItems.map(item => (
+              <li>
+                <Link href={item.href}>
+                  <a>{item.title}</a>
+                </Link>
+              </li>
+            ))}
+          </div>
+        </ul>}
+
     </li>
   )
 }

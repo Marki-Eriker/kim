@@ -69,12 +69,13 @@
   &__nav {
     display: flex;
     align-items: center;
-    height: 30px;
+    height: 35px;
 
-    ul {
+    &-list {
+      width: 100%;
+      display: flex;
       list-style: none;
+      justify-content: space-between;
     }
-
-
   }
 }

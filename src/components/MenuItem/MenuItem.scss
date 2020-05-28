@@ -15,15 +15,38 @@
   }
 
   &__sub {
+    z-index: 10;
+    background-color: white;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    transform: translateY(103%);
+    transform: translateY(calc(100% + 3px));
     box-shadow: 0 25px 34px rgba(0,0,0, .1);
+    padding: 10px 0;
+    list-style: none;
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      li {
+        flex-basis: 33%;
+        padding-right: 20px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
     &--hide {
       display: none;
+      opacity: 0;
     }
+
+
+
   }
 }
 

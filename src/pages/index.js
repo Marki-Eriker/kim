@@ -1,9 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import './index.scss'
-import {Header, Slider} from '../modules';
+import {Header, Slider, Primary, About} from '../modules';
+import {InfoBaner} from '../components';
 
-const Home = ({menu, images}) => {
+const Home = ({menu, images, banners}) => {
 
   return (
     <div className="container">
@@ -13,9 +14,12 @@ const Home = ({menu, images}) => {
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
       </Head>
       <Header menu={menu}/>
-      <Slider slides={images}/>
+      <Slider slides={images} autoPlay={5}/>
       <main>
-
+        <Primary/>
+        <InfoBaner image={banners.polk}/>
+        <About/>
+        <InfoBaner image={banners.covid}/>
       </main>
 
       <footer>
@@ -239,7 +243,12 @@ export const getStaticProps = async () => {
     '/slider/5.jpg',
   ]
 
-  return {props: {menu, images}}
+  const banners = {
+    polk: '/polk.jpg',
+    covid: '/covid.jpg'
+  }
+
+  return {props: {menu, images, banners}}
 }
 
 export default Home

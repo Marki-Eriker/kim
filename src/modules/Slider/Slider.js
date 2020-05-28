@@ -1,34 +1,42 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import './Slider.scss'
-import cn from 'classnames'
 import Image from './Image';
+import SliderDot from './SliderDot';
 
-const Slider = ({slides}) => {
+const Slider = ({slides, autoPlay}) => {
 
+  const length = slides.length
+  const autoPlayRef = useRef()
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [translate, setTranslate] = useState({
-    transform: 'translateX(0)'
+
+  useEffect(() => {
+    autoPlayRef.current = nextSlide
   })
 
-  const nextSlide = (idx) => {
-    setTranslate({transform: `translateX(-${100 * idx}%)`})
-    setCurrentIndex(idx)
+  useEffect(() => {
+    const play = () => {
+      autoPlayRef.current()
+    }
+    const interval = setInterval(play, autoPlay * 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const toSlide = (idx) => {
+    if (idx === currentIndex) return
+    const index = ((idx + 1) > (length)) ? 0 : idx
+    setCurrentIndex(index)
   }
 
-  const autoPlay = () => {
-    setTimeout(() => {
-      currentIndex === (slides.length - 1)
-      ? nextSlide(0)
-      : nextSlide(currentIndex + 1)
-    }, 5000)
+  const nextSlide = () => {
+    const index = (currentIndex + 1) === length ? 0 : currentIndex + 1
+    setCurrentIndex(index)
   }
-
-  autoPlay()
 
   return (
     <section className='slider'>
 
-      <div className='slider__content' style={translate}>
+      <div className='slider__content'
+           style={{transform: `translateX(-${100 * currentIndex}vw)`}}>
 
         {slides.map((img) => (
           <Image image={img}/>
@@ -39,9 +47,7 @@ const Slider = ({slides}) => {
       <div className='slider__controls'>
 
         {slides.map((img, idx) => (
-          <span onClick={() => nextSlide(idx)}
-          className={cn('slider__controls-dot', {'slider__controls-dot--active': idx === currentIndex})}
-          > </span>
+          <SliderDot currentIndex={currentIndex} index={idx} onDot={toSlide}/>
         ))}
 
       </div>

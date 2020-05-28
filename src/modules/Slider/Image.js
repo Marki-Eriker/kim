@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Image = ({image, idx}) => {
+const Image = ({image}) => {
   return (
     <img
       className='slider__image'

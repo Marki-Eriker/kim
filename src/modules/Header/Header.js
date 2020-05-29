@@ -13,7 +13,7 @@ const Header = ({menu}) => {
         <div className='header__top' onMouseEnter={() => setOpen(null)}>
 
           <div className='header__logo'>
-            <img src='logo.png' alt='logo'/>
+            <img src='logo-win.png' alt='logo'/>
           </div>
 
           <div className='header__info'>

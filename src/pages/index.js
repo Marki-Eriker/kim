@@ -1,8 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 import './index.scss'
-import {Header, Slider, Primary, About, News} from '../modules';
+import {Header, Slider, Primary, About, News, Footer} from '../modules';
 import {InfoBaner} from '../components';
+import GovernmentLink from '../modules/GovermentLink/GovernmentLink';
 
 const Home = ({menu, images, banners}) => {
 
@@ -22,12 +23,9 @@ const Home = ({menu, images, banners}) => {
         <InfoBaner image={banners.covid}/>
         <News/>
         <InfoBaner image={banners.km}/>
+        <GovernmentLink/>
       </main>
-
-      <footer>
-
-      </footer>
-
+      <Footer/>
     </div>
   )
 }

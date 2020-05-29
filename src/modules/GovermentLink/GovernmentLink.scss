@@ -1,0 +1,30 @@
+.government-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__part {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    img {
+      margin-bottom: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all .2s linear;
+
+      &:visited, &:link {
+        color: inherit;
+      }
+
+      &:hover {
+        color: #506399;
+      }
+    }
+  }
+}

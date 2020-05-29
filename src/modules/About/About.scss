@@ -3,37 +3,31 @@
   padding: 13px;
 
   &__content {
-    height: 300px;
-    background-color: #1c336b;
+    padding: 30px;
     border: 1px solid #2294ce;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px;
+    grid-template-areas:
+    "about__text about__text about__info-1 about__info-2"
+    "about__text about__text about__info-3 about__info-4";
   }
 
-  &__content-right {
-    display: flex;
-    justify-content: center;
+  &__text {
+    grid-area: about__text;
+    margin-right: 40px;
+    //border: 1px solid #2294ce;
 
-    &-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: start;
-    }
-  }
-
-  &__content-left {
-    flex-basis: 50%;
-    flex-shrink: 0;
-    margin-right: 50px;
-    h2 {
+    &-header {
       font-size: 25px;
       font-weight: 400;
       text-transform: uppercase;
       color: #2294ce;
       margin-bottom: 15px;
     }
-    p {
+
+    &-content {
       color: white;
       margin-bottom: 30px;
     }
@@ -66,6 +60,7 @@
     margin-left: 20px;
     text-transform: uppercase;
     transition: color .2s linear;
+    letter-spacing: 1px;
 
     &:hover {
       color: #2294ce;
@@ -77,27 +72,28 @@
   }
 
   &__info {
-    display: flex;
-    flex-basis: 45%;
-    align-items: baseline;
-    justify-content: center;
-    flex-direction: column;
+    //border: 1px solid #2294ce;
+    padding-left: 40px;
+
+    &-1 {grid-area: about__info-1;}
+    &-2 {grid-area: about__info-2;}
+    &-3 {grid-area: about__info-3;}
+    &-4 {grid-area: about__info-4;}
+  }
+
+  &__info-title {
+    display: block;
+    color: white;
+    font-size: 55px;
+    line-height: 60px;
+    font-weight: 700;
+  }
+
+  &__info-text {
     color: #2294ce;
-    margin-right: 20px;
-
-
-    &-title {
-      color: white;
-      font-size: 55px;
-      line-height: 55px;
-      font-weight: 700;
-    }
-
-    &-text {
-      font-size: 16px;
-      line-height: 18px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 }

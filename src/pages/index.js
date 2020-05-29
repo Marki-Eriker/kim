@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import './index.scss'
-import {Header, Slider, Primary, About} from '../modules';
+import {Header, Slider, Primary, About, News} from '../modules';
 import {InfoBaner} from '../components';
 
 const Home = ({menu, images, banners}) => {
@@ -20,6 +20,8 @@ const Home = ({menu, images, banners}) => {
         <InfoBaner image={banners.polk}/>
         <About/>
         <InfoBaner image={banners.covid}/>
+        <News/>
+        <InfoBaner image={banners.km}/>
       </main>
 
       <footer>
@@ -238,14 +240,14 @@ export const getStaticProps = async () => {
   const images = [
     '/slider/1.jpg',
     '/slider/2.jpg',
-    '/slider/3.jpg',
-    '/slider/4.jpg',
     '/slider/5.jpg',
+    '/slider/7.jpg',
   ]
 
   const banners = {
-    polk: '/polk.jpg',
-    covid: '/covid.jpg'
+    polk: '/baners/polk.jpg',
+    covid: '/baners/covid.jpg',
+    km: '/baners/km.jpg'
   }
 
   return {props: {menu, images, banners}}

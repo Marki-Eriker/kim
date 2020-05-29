@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import './index.scss'
-import {Header, Slider, Primary, About, News, Footer} from '../modules';
+import {Header, Slider, Primary, About, News, Footer, Map} from '../modules';
 import {InfoBaner} from '../components';
 import GovernmentLink from '../modules/GovermentLink/GovernmentLink';
 
@@ -23,6 +23,10 @@ const Home = ({menu, images, banners}) => {
         <InfoBaner image={banners.covid}/>
         <News/>
         <InfoBaner image={banners.km}/>
+        <div className='content'>
+        <script type="text/javascript" charSet="utf-8"
+                async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A07705a66a959d1a589c03556cbab334c8ec0247386cdb1651368fd14cfa5d215&amp;width=100%25&amp;height=685&amp;lang=ru_RU&amp;scroll=true"/>
+        </div>
         <GovernmentLink/>
       </main>
       <Footer/>

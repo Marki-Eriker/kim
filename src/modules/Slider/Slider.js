@@ -38,16 +38,16 @@ const Slider = ({slides, autoPlay}) => {
       <div className='slider__content'
            style={{transform: `translateX(-${100 * currentIndex}vw)`}}>
 
-        {slides.map((img) => (
-          <Image image={img}/>
+        {slides.map((img, index) => (
+          <Image key={index} image={img}/>
           ))}
 
       </div>
 
       <div className='slider__controls'>
 
-        {slides.map((img, idx) => (
-          <SliderDot currentIndex={currentIndex} index={idx} onDot={toSlide}/>
+        {slides.map((img, index) => (
+          <SliderDot key={index} currentIndex={currentIndex} index={index} onDot={toSlide}/>
         ))}
 
       </div>

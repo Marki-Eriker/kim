@@ -28,7 +28,28 @@
   align-items: center;
   padding: 60px 30px;
   text-align: center;
-  img {
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all .2s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+
+    &:visited, &:link {
+      color: inherit;
+    }
+
+    &:hover {
+      color: #506399;
+    }
+  }
+
+  .icon {
+    height: 80px;
+    width: 80px;
     margin-bottom: 10px;
   }
 }

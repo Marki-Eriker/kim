@@ -11,6 +11,7 @@
   }
 
   &__logo {
+    cursor: pointer;
     img {
       height: 65px;
     }
@@ -24,7 +25,7 @@
     &-search{
       display: flex;
       align-items: center;
-
+      margin-bottom: 2px;
       input {
         height: 30px;
         outline: none;
@@ -50,7 +51,7 @@
       border-radius: 3px;
       width: 100%;
       text-align: center;
-      padding: 5px 10px;
+      padding: 7px 10px;
       margin-top: 5px;
       text-decoration: none;
       letter-spacing: .8px;

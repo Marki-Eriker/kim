@@ -1,3 +1,6 @@
 export {default as MenuItem} from './MenuItem/MenuItem'
 export {default as InfoBaner} from './InfoBaner/InfoBaner'
 export {default as Post} from './Post/Post'
+export {default as StructureBlock} from './StructureBlock/StructureBlock'
+export {default as InfoBlock} from './InfoBlock/InfoBlock'
+export {default as PLink} from './PLink/PLink'

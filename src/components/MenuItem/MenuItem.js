@@ -22,8 +22,8 @@ const MenuItem = ({item, setOpen, index, isOpen}) => {
       {item.subItems &&
         <ul className={cn('menu-item__sub', {'menu-item__sub--hide': !isOpen})} onMouseLeave={closeMenu}>
           <div className='content'>
-            {item.subItems.map(item => (
-              <li>
+            {item.subItems.map((item, index) => (
+              <li key={index}>
                 <Link href={item.href}>
                   <a>{item.title}</a>
                 </Link>

@@ -1,0 +1,56 @@
+.structure-block {
+  position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid #ececf0;
+  padding: 0 20px;
+  margin-bottom: 30px;
+
+  &__title {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #506399;
+    border-bottom: 1px solid #ececf0;
+  }
+
+  &__phone {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    color: #506399;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &__content {
+    height: 65px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover &-phone {
+      font-size: 13px;
+    }
+
+    &-name {
+      margin-bottom: 2px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    &-position {
+      font-size: 12px;
+    }
+    &-phone {
+      position: absolute;
+      right: 0;
+      top: 15px;
+      color: #506399;
+      font-size: 12px;
+      transition: font-size .3s linear;
+    }
+  }
+}

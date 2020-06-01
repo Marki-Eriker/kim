@@ -6,7 +6,7 @@ const Footer = (props) => {
     <footer className='footer'>
       <div className='content'>
         <div className='footer__info'>
-          <img className='footer__logo' src='logo-small.png' alt='logo'/>
+          <img className='footer__logo' src='/logo-small.png' alt='logo'/>
           <p className='footer__copyright'>
             Copyright © 2014-2019,<br/>
             Канал имени Москвы.Все права защищены.<br/>

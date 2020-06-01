@@ -1,0 +1,138 @@
+.content-slider {
+
+  &__body {
+    position: relative;
+    height: 470px;
+    box-shadow: 0 0 5px #ccc;
+    border: 5px solid #fff;
+    background-color: #fff;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+    z-index: 1;
+
+    &--previous {
+      z-index: 9;
+    }
+
+    &--active {
+      z-index: 10;
+      animation-name: fade-in;
+      animation-duration: .8s;
+    }
+  }
+
+  &__image-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: rgba(black, .5);
+
+    &--previous {
+      z-index: 9;
+    }
+
+    &--active {
+      z-index: 11;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    transform: translateY(-50%);
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+
+    &-item {
+      cursor: pointer;
+      content: '';
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: #506399;
+      opacity: .1;
+      transition: opacity .7s linear;
+
+      &--active {
+        opacity: .5;
+      }
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+}
+
+.arrow {
+  content: '';
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 44px;
+  height: 44px;
+  border-radius: 100px;
+  background-color: black;
+  opacity: .2;
+  cursor: pointer;
+  transition: opacity .2s linear;
+
+  &:hover {
+    opacity: .4;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border-bottom: 5px solid white;
+    border-left: 5px solid white;
+  }
+
+  &-left:after {
+    transform: rotate(45deg);
+    left: 17px;
+    top: 15px
+  }
+
+  &-right:after {
+    transform: rotate(-135deg);
+    left: 14px;
+    top: 15px
+  }
+}
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}

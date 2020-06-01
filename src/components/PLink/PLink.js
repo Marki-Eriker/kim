@@ -7,9 +7,15 @@ const PLink = ({data}) => {
       {data.map((item, index) => (
         <React.Fragment key={index}>
           {item.before}
-          <Link href={item.link.to} key={index}>
-          <a>{item.link.name}</a>
-          </Link>
+
+          {item.link.to.includes('http')
+          ? (<a className='link link-text' href={item.link.to} key={index}>{item.link.name}</a>)
+          : (
+              <Link href={item.link.to} key={index}>
+                <a className='link link-text'>{item.link.name}</a>
+              </Link>
+            )}
+
           {item.after}
         </React.Fragment>
       ))}

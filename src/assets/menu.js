@@ -51,23 +51,27 @@ export const menu = [
     ],
   },
   {
-    href: '/documents',
+    href: '/documents/legal',
     title: 'Документы',
     subItems: [
       {
-        href: '/about',
+        href: '/documents/[pageName]',
+        realHref: '/documents/legal.html',
         title: 'Правовые основы деятельности',
       },
       {
-        href: '/about',
+        href: '/documents/[pageName]',
+        realHref: '/documents/openness.html',
         title: 'Раскрытие информации',
       },
       {
-        href: '/about',
+        href: '/documents/[pageName]',
+        realHref: '/documents/corruption.html',
         title: 'Противодействие коррупции ',
       },
       {
-        href: '/about',
+        href: '/documents/[pageName]',
+        realHref: '/documents/customs.html',
         title: 'Закупки ',
       },
     ],

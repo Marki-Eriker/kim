@@ -15,16 +15,16 @@ const Header = ({menu}) => {
 
           <div className='header__logo'>
             <Link href='/'>
-            <img src='/logo-win.png' alt='logo'/>
+            <img src='/logo-win.png' alt='logo' className='header__logo-img'/>
             </Link>
           </div>
 
           <div className='header__info'>
             <div className='header__info-search'>
-              <input type='text' className='header__info-box_search' placeholder='Поиск по сайту'/>
-              <img src='/search.svg' alt='search'/>
+              <input type='text' className='header__info-search-input' placeholder='Поиск по сайту'/>
+              <img src='/search.svg' alt='search' className='header__info-search-img'/>
             </div>
-            <a href='https://lk.kim-online.ru/' target='_blank'>Личный кабинет</a>
+            <a href='https://lk.kim-online.ru/' target='_blank' className='header__info-a'>Личный кабинет</a>
           </div>
 
         </div>

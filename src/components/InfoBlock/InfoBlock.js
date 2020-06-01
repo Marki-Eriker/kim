@@ -8,7 +8,7 @@ const InfoBlock = ({data, children}) => {
       <div className='info-block__link'>
         {data && (
           <Link href={data.link.to}>
-            <a>{data.link.name}</a>
+            <a className='link link-text'>{data.link.name}</a>
           </Link>
         )}
         {children}

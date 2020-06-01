@@ -2,6 +2,7 @@
   height: 200px;
   border-top: 1px solid #506399;
   margin-top: 25px;
+
   .content {
     width: 100%;
     display: flex;
@@ -12,8 +13,6 @@
   &__info {
     flex-shrink: 0;
     padding-right: 10px;
-    //flex-basis: 35%;
-    //border-right: 1px solid #506399;
     position: relative;
 
     &:after {
@@ -28,11 +27,10 @@
   }
 
   &__contacts {
-    //flex-basis: 37%;
+
     &-item {
       width: 100%;
       display: flex;
-      //margin-left: 20px;
 
       &:not(:last-child) {
         margin-bottom: 10px;
@@ -44,15 +42,12 @@
       font-weight: 700;
     }
 
-    &-item-text {
-
-    }
   }
 
   &__feedback {
-    //flex-basis: 20%;
     display: flex;
     justify-content: center;
+
     a {
       background-color: #506399;
       color: white;

@@ -1,65 +1,69 @@
 import React from 'react'
 import {menu as menuData} from '../../assets/menu'
-import {ContentSlider, FaqForm, Footer, Head, Header, Sidebar} from '../../modules';
-import {StructureBlock, InfoBlock, PLink} from '../../components';
+import {makeContent} from '../../utils/makeContent'
+import {InnerPage} from '../../modules';
 
 
-const PageName = (props) => {
+const AboutPages = (props) => {
 
-  const pageContent = props.data.content.map((item, index) => {
-    switch (Object.keys(item)[0]) {
-      case 'p':
-        return (<p key={index}>{item.p}</p>)
-      case 'ul':
-        return (
-          <ul key={index}>
-            {item.ul.map((item, index) => (<li key={index}>{item}</li>))}
-          </ul>
-        )
-      case 'structureBlock':
-        return ( <StructureBlock data={item.structureBlock} key={index}/> )
-      case 'infoBlock':
-        return ( <InfoBlock data={item.infoBlock} key={index}/> )
-      case 'slider':
-        return ( <ContentSlider images={item.slider} key={index}/>)
-      case 'h4':
-        return ( <h4 key={index}>{item.h4}</h4>)
-      case 'h3':
-        return ( <h3 key={index}>{item.h3}</h3>)
-      case 'h4center':
-        return ( <h4 key={index} style={{textAlign: 'center'}}>{item.h4center}</h4>)
-      case 'plink':
-        return ( <PLink data={item.plink} key={index}/>)
-      case 'pbr':
-        return (
-          <p key={index + 400}>{item.pbr.map((item, index) => (<React.Fragment key={index + 300}>{item} <br/></React.Fragment>))}</p>)
-      case 'line':
-        return ( <span key={index} className='page__content-line'/>)
-      case 'faqForm':
-        return ( <FaqForm key={index}/> )
-    }
-  })
+  const pageContent = makeContent(props.data.content)
 
-  return (
-    <div className='container'>
-      <Head/>
-      <Header menu={props.menu}/>
-      <main className='u-pt-mid'>
-        <div className='content'>
-          <div className='page'>
-            <Sidebar className='page__sidebar' menu={props.menu[0].subItems} title={props.menu[0].title}/>
-            <div className='page__content'>
-              <h1 className='content__title'>
-                {props.data.title}
-              </h1>
-              {pageContent}
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer/>
-    </div>
-  )
+  // const pageContent = props.data.content.map((item, index) => {
+  //   switch (Object.keys(item)[0]) {
+  //     case 'p':
+  //       return (<p key={index}>{item.p}</p>)
+  //     case 'ul':
+  //       return (
+  //         <ul key={index}>
+  //           {item.ul.map((item, index) => (<li key={index}>{item}</li>))}
+  //         </ul>
+  //       )
+  //     case 'structureBlock':
+  //       return ( <StructureBlock data={item.structureBlock} key={index}/> )
+  //     case 'infoBlock':
+  //       return ( <InfoBlock data={item.infoBlock} key={index}/> )
+  //     case 'slider':
+  //       return ( <ContentSlider images={item.slider} key={index}/>)
+  //     case 'h4':
+  //       return ( <h4 key={index}>{item.h4}</h4>)
+  //     case 'h3':
+  //       return ( <h3 key={index}>{item.h3}</h3>)
+  //     case 'h4center':
+  //       return ( <h4 key={index} style={{textAlign: 'center'}}>{item.h4center}</h4>)
+  //     case 'plink':
+  //       return ( <PLink data={item.plink} key={index}/>)
+  //     case 'pbr':
+  //       return (
+  //         <p key={index + 400}>{item.pbr.map((item, index) => (<React.Fragment key={index + 300}>{item} <br/></React.Fragment>))}</p>)
+  //     case 'line':
+  //       return ( <span key={index} className='page__content-line'/>)
+  //     case 'faqForm':
+  //       return ( <FaqForm key={index}/> )
+  //   }
+  // })
+
+  // return (
+  //   <div className='container'>
+  //     <Head/>
+  //     <Header menu={props.menu}/>
+  //     <main className='u-pt-mid'>
+  //       <div className='content'>
+  //         <div className='page'>
+  //           <Sidebar className='page__sidebar' menu={props.menu[0].subItems} title={props.menu[0].title}/>
+  //           <div className='page__content'>
+  //             <h1 className='content__title'>
+  //               {props.data.title}
+  //             </h1>
+  //             {pageContent}
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </main>
+  //     <Footer/>
+  //   </div>
+  // )
+
+  return <InnerPage menu={props.menu} sidebar={0} title={props.data.title} pageContent={pageContent}/>
 }
 
 export const getStaticProps = async (ctx) => {
@@ -706,11 +710,9 @@ export const getStaticProps = async (ctx) => {
   const data = pagesData[ctx.params.pageName.replace('.html', '')]
 
   return { props: {data, ctx ,menu}}
-
 }
 
 export const getStaticPaths = async () => {
-
   return {
     fallback: false,
     paths: [
@@ -727,4 +729,4 @@ export const getStaticPaths = async () => {
   }
 }
 
-export default PageName
+export default AboutPages

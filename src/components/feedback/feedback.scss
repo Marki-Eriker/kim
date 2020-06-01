@@ -1,0 +1,17 @@
+.feedback-button {
+  margin: 40px auto;
+  width: 200px;
+
+  &-link {
+    background-color: #506399;
+    color: white;
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 5px;
+    text-decoration: none;
+    letter-spacing: .8px;
+    transition: opacity .2s linear;
+  }
+}

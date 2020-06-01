@@ -15,7 +15,7 @@ const MenuItem = ({item, setOpen, index, isOpen}) => {
 
   return (
     <li className='menu-item'>
-      <Link href={item.href} >
+      <Link prefetch={false} href={item.href} as={item.realHref}>
         <a className='nav__link' onMouseEnter={openMenu}>{item.title}</a>
       </Link>
 
@@ -24,7 +24,7 @@ const MenuItem = ({item, setOpen, index, isOpen}) => {
           <div className='content'>
             {item.subItems.map((item, index) => (
               <li key={index}>
-                <Link href={item.href}>
+                <Link href={item.href} as={item.realHref}>
                   <a>{item.title}</a>
                 </Link>
               </li>

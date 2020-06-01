@@ -9,7 +9,7 @@ const Sidebar = ({title, menu, className}) => {
       <ul className='sidebar__content'>
         {menu.map((item, index) => (
           <li className='sidebar__menu-items menu-item' key={index}>
-            <Link href={item.href} >
+            <Link prefetch={false} href={item.href} as={item.realHref}>
               <a className='sidebar__nav-link nav__link'>{item.title}</a>
             </Link>
           </li>

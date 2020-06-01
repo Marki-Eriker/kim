@@ -20,8 +20,8 @@ const Home = ({menu, images, banners}) => {
         <News/>
         <InfoBaner image={banners.km}/>
         <div className='content'>
-        <script type="text/javascript" charSet="utf-8"
-                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A07705a66a959d1a589c03556cbab334c8ec0247386cdb1651368fd14cfa5d215&amp;width=100%25&amp;height=685&amp;lang=ru_RU&amp;scroll=false" async/>
+        {/*<script type="text/javascript" charSet="utf-8" async defer*/}
+        {/*        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A07705a66a959d1a589c03556cbab334c8ec0247386cdb1651368fd14cfa5d215&amp;width=100%25&amp;height=685&amp;lang=ru_RU&amp;scroll=false"/>*/}
         </div>
         <GovernmentLink/>
       </main>

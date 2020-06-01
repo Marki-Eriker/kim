@@ -4,39 +4,48 @@ export const menu = [
     title: 'Об учреждении',
     subItems: [
       {
-        href: '/about/about',
+        href: '/about/[pageName]',
+        realHref: '/about/about.html',
         title: 'Общая информация',
       },
       {
-        href: '/about/structure',
+        href: '/about/[pageName]',
+        realHref: '/about/structure.html',
         title: 'Структура и руководство',
       },
       {
-        href: '/about/branches',
+        href: '/about/[pageName]',
+        realHref: '/about/branches.html',
         title: 'Филиалы',
       },
       {
-        href: '/about/history',
+        href: '/about/[pageName]',
+        realHref: '/about/history.html',
         title: 'История',
       },
       {
-        href: '/about/museum',
+        href: '/about/[pageName]',
+        realHref: '/about/museum.html',
         title: 'Музей',
       },
       {
-        href: '/about/education',
+        href: '/about/[pageName]',
+        realHref: '/about/education.html',
         title: 'Образование',
       },
       {
-        href: '/about/vacancy',
+        href: '/about/[pageName]',
+        realHref: '/about/vacancy.html',
         title: 'Вакансии',
       },
       {
-        href: '/about/feedback',
+        href: '/about/[pageName]',
+        realHref: '/about/feedback.html',
         title: 'Обращения граждан',
       },
       {
-        href: '/about/faq',
+        href: '/about/[pageName]',
+        realHref: '/about/faq.html',
         title: 'Вопрос-ответ',
       },
     ],

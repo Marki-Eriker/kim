@@ -29,6 +29,7 @@ const ContentSlider = ({images}) => {
           <React.Fragment key={index}>
           <img src={image.link} alt='image'
                key={index}
+               loading='lazy'
                className={cn(
                  'content-slider__image',
                  {'content-slider__image--previous': previous === index},

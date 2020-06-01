@@ -703,7 +703,7 @@ export const getStaticProps = async (ctx) => {
     }
   }
   const menu = menuData
-  const data = pagesData[ctx.params.pageName]
+  const data = pagesData[ctx.params.pageName.replace('.html', '')]
 
   return { props: {data, ctx ,menu}}
 

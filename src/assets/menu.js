@@ -5,47 +5,47 @@ export const menu = [
     subItems: [
       {
         href: '/about/[pageName]',
-        realHref: '/about/about.html',
+        realHref: '/about/about',
         title: 'Общая информация',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/structure.html',
+        realHref: '/about/structure',
         title: 'Структура и руководство',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/branches.html',
+        realHref: '/about/branches',
         title: 'Филиалы',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/history.html',
+        realHref: '/about/history',
         title: 'История',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/museum.html',
+        realHref: '/about/museum',
         title: 'Музей',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/education.html',
+        realHref: '/about/education',
         title: 'Образование',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/vacancy.html',
+        realHref: '/about/vacancy',
         title: 'Вакансии',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/feedback.html',
+        realHref: '/about/feedback',
         title: 'Обращения граждан',
       },
       {
         href: '/about/[pageName]',
-        realHref: '/about/faq.html',
+        realHref: '/about/faq',
         title: 'Вопрос-ответ',
       },
     ],
@@ -56,22 +56,22 @@ export const menu = [
     subItems: [
       {
         href: '/documents/[pageName]',
-        realHref: '/documents/legal.html',
+        realHref: '/documents/legal',
         title: 'Правовые основы деятельности',
       },
       {
         href: '/documents/[pageName]',
-        realHref: '/documents/openness.html',
+        realHref: '/documents/openness',
         title: 'Раскрытие информации',
       },
       {
         href: '/documents/[pageName]',
-        realHref: '/documents/corruption.html',
+        realHref: '/documents/corruption',
         title: 'Противодействие коррупции ',
       },
       {
         href: '/documents/[pageName]',
-        realHref: '/documents/customs.html',
+        realHref: '/documents/customs',
         title: 'Закупки ',
       },
     ],

@@ -3,12 +3,10 @@ import React from 'react'
 
 const Image = ({image}) => {
   return (
-    <img
-      className='slider__image'
-      loading='lazy'
-      src={image}
-      alt='slider-image'
-    />
+    <picture>
+      <source type='image/webp' srcSet={image.replace('.jpg', '.webp')}/>
+      <img className='slider__image' loading='lazy' src={image} alt='slider-image' width={1920}/>
+    </picture>
   )
 }
 

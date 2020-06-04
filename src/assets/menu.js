@@ -118,27 +118,27 @@ export const menu = [
     subItems: [
       {
         href: '/captainsService/[pageName]',
-        realHref: '/navigation/schema',
+        realHref: '/navigation/portControl',
         title: 'Государственный портовый контроль',
       },
       {
         href: '/captainsService/[pageName]',
-        realHref: '/navigation/schema',
+        realHref: '/navigation/seaPass',
         title: 'Удостоверение личности моряка и мореходная книжка',
       },
       {
         href: '/captainsService/[pageName]',
-        realHref: '/navigation/schema',
+        realHref: '/navigation/certification',
         title: 'Дипломирование и аттестация',
       },
       {
         href: '/captainsService/[pageName]',
-        realHref: '/navigation/schema',
+        realHref: '/navigation/shopRegistration',
         title: 'Государственная регистрация судов',
       },
       {
         href: '/captainsService/[pageName]',
-        realHref: '/navigation/schema',
+        realHref: '/navigation/feeRefund',
         title: 'Возврат государственной пошлины',
       },
     ],

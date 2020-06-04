@@ -20,7 +20,11 @@ const DocumentsPages = (props) => {
 export const getStaticProps = async (ctx) => {
 
   const pagesData = {
-
+    portControl: {
+      page: 'portControl',
+      title: 'Государственный портовый контроль',
+      content: []
+    }
   }
 
   const menu = menuData
@@ -33,7 +37,7 @@ export const getStaticPaths = async () => {
   return {
     fallback: false,
     paths: [
-      { params: {pageName: 'legal'}},
+      { params: {pageName: 'portControl'}},
     ]
   }
 }

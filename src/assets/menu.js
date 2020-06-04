@@ -77,57 +77,68 @@ export const menu = [
     ],
   },
   {
-    href: '/navigation',
+    href: '/navigation/schema',
     title: 'Навигация',
     subItems: [
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Cхема водных путей',
       },
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/controlStation',
         title: 'Диспетчерские пункты',
       },
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/safetyOfNavigation',
         title: 'Документы по безопасности судоходства',
       },
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/travelInfo',
         title: 'Ежесуточная путевая информация',
       },
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/limitations',
         title: 'Ограничения и запрещение движения судов',
       },
       {
-        href: '/about',
+        href: '/navigation/[pageName]',
+        realHref: '/navigation/smallShip',
         title: 'Пропуск маломерных судов',
       },
     ],
   },
   {
-    href: '/captains-service',
+    href: '/captainsService/portControl',
     title: 'Служба капитана Московского бассейна ВВП',
     subItems: [
       {
-        href: '/about',
+        href: '/captainsService/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Государственный портовый контроль',
       },
       {
-        href: '/about',
+        href: '/captainsService/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Удостоверение личности моряка и мореходная книжка',
       },
       {
-        href: '/about',
+        href: '/captainsService/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Дипломирование и аттестация',
       },
       {
-        href: '/about',
+        href: '/captainsService/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Государственная регистрация судов',
       },
       {
-        href: '/about',
+        href: '/captainsService/[pageName]',
+        realHref: '/navigation/schema',
         title: 'Возврат государственной пошлины',
       },
     ],
@@ -192,7 +203,7 @@ export const menu = [
   },
   {
     href: '/media',
-    title: 'Услуги',
+    title: 'Медиа',
     subItems: [
       {
         href: '/about',

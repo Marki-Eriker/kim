@@ -1,0 +1,73 @@
+.small-ship-form {
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ececf0;
+  padding: 20px;
+
+  &__content {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &-header {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__inputs-label {
+    position: relative;
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    input {
+      height: 30px;
+      width: 65%;
+      padding: 0 5px;
+      border: 1px solid #506399;
+      border-radius: 3px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    background-color: #506399;
+    color: white;
+    border-radius: 3px;
+    width: 35%;
+    text-align: center;
+    padding: 7px 10px;
+    margin-top: 5px;
+    text-decoration: none;
+    letter-spacing: .8px;
+    transition: opacity .2s linear;
+
+    &:active, &:visited {
+      color: white;
+    }
+
+    &:hover {
+      opacity: .9;
+      color: white;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    color: darkred;
+    font-size: 13px;
+    right: 3px;
+    top: -20px;
+
+    & ~ input {
+      border: 1px solid red;
+    }
+  }
+}

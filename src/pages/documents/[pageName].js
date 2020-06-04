@@ -1,13 +1,20 @@
 import React from 'react'
 import {menu as menuData} from '../../assets/menu'
 import {makeContent} from '../../utils/makeContent';
-import {InnerPage} from '../../modules';
+import {Footer, Head, Header, InnerPage} from '../../modules';
 
 const DocumentsPages = (props) => {
 
   const pageContent = makeContent(props.data.content)
 
-  return <InnerPage menu={props.menu} sidebar={1} title={props.data.title} pageContent={pageContent}/>
+  return (
+    <div className='container'>
+      <Head/>
+      <Header menu={props.menu}/>
+      <InnerPage menu={props.menu} sidebar={1} title={props.data.title} pageContent={pageContent}/>
+      <Footer/>
+    </div>
+    )
 }
 
 export const getStaticProps = async (ctx) => {

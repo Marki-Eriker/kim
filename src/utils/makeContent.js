@@ -1,6 +1,6 @@
 import React from 'react'
-import {InfoBlock, PLink, StructureBlock, Feedback} from '../components';
-import {ContentSlider, FaqForm} from '../modules';
+import {InfoBlock, PLink, StructureBlock, Feedback, Picture} from '../components';
+import {ContentSlider, ControlStationTable, FaqForm, LimitTable, SmallShipForm} from '../modules';
 
 export const makeContent = (data) => {
   return data.map((item, index) => {
@@ -44,6 +44,20 @@ export const makeContent = (data) => {
           </p>)
       case 'feedback':
         return ( <Feedback title={item.feedback}/>)
+      case 'picture':
+        return ( <Picture image={item.picture}/> )
+      case 'controlStation':
+        return (
+          <React.Fragment>
+            {item.controlStation.map((station, index) => (
+            <ControlStationTable data={station} key={`station-${index}`}/>
+            ))}
+          </React.Fragment>
+          )
+      case 'limits':
+        return ( <LimitTable data={item.limits}/> )
+      case 'smallShipForm':
+        return ( <SmallShipForm />)
     }
   })
 }

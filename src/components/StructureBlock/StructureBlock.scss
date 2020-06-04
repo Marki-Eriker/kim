@@ -33,7 +33,7 @@
     justify-content: center;
 
     &:hover &-phone {
-      font-size: 13px;
+      transform: translateY(-2px);
     }
 
     &-name {
@@ -50,7 +50,8 @@
       top: 15px;
       color: #506399;
       font-size: 12px;
-      transition: font-size .3s linear;
+      //transition: font-size .3s linear;
+      transition: transform .3s linear;
     }
   }
 }

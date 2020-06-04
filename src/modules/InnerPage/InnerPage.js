@@ -3,9 +3,11 @@ import {Footer, Head, Header, Sidebar} from '../index';
 
 const InnerPage = ({menu, sidebar, title, pageContent}) => {
   return (
-    <div className='container'>
-      <Head/>
-      <Header menu={menu}/>
+    <React.Fragment>
+    {/*<div className='container'>*/}
+      {/*<Head/>*/}
+      {/*<Header menu={menu}/>*/}
+
       <main className='u-pt-mid'>
         <div className='content'>
           <div className='page'>
@@ -19,8 +21,10 @@ const InnerPage = ({menu, sidebar, title, pageContent}) => {
           </div>
         </div>
       </main>
-      <Footer/>
-    </div>
+
+      {/*<Footer/>*/}
+    {/*</div>*/}
+    </React.Fragment>
   )
 }
 

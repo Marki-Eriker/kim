@@ -1,0 +1,30 @@
+.info-block-disclose {
+  position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid #ececf0;
+  padding: 20px;
+  margin-bottom: 15px;
+
+  &__title {
+    cursor: pointer;
+    font-size: 14px;
+
+    transition: color .3s linear;
+
+    &:hover {
+      color: #506399;
+    }
+  }
+
+  &__content {
+    visibility: hidden;
+    display: none;
+    margin-top: 20px;
+    transition: all 1s linear;
+
+    &--open {
+      visibility: visible;
+      display: block;
+    }
+  }
+}

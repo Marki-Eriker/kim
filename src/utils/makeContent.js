@@ -1,5 +1,5 @@
 import React from 'react'
-import {InfoBlock, PLink, StructureBlock, Feedback, Picture} from '../components';
+import {InfoBlock, PLink, StructureBlock, Feedback, Picture, InfoBlockDisclose, PImg} from '../components';
 import {ContentSlider, ControlStationTable, FaqForm, LimitTable, SmallShipForm} from '../modules';
 
 export const makeContent = (data) => {
@@ -17,6 +17,10 @@ export const makeContent = (data) => {
         return (<StructureBlock data={item.structureBlock} key={index}/>)
       case 'infoBlock':
         return (<InfoBlock data={item.infoBlock} key={index}/>)
+      case 'infoBlockDisclose':
+        return (<InfoBlockDisclose
+          data={item.infoBlockDisclose.data}
+          title={item.infoBlockDisclose.title} key={`infoBlockDisclose-${index}`}/>)
       case 'slider':
         return (<ContentSlider images={item.slider} key={index}/>)
       case 'h4':
@@ -31,6 +35,8 @@ export const makeContent = (data) => {
         return (
           <p key={index + 400}>{item.pbr.map((item, index) => (
             <React.Fragment key={index + 300}>{item} <br/></React.Fragment>))}</p>)
+      case 'pimg':
+        return (<PImg img={item.pimg.img} data={item.pimg.data} key={`pimg-${index}`}/>)
       case 'line':
         return (<span key={index} className='page__content-line'/>)
       case 'faqForm':
@@ -58,6 +64,8 @@ export const makeContent = (data) => {
         return ( <LimitTable data={item.limits}/> )
       case 'smallShipForm':
         return ( <SmallShipForm />)
+      case 'miniMap':
+        return (<iframe width="100%" height="400" src={item.miniMap} frameBorder="0"/>)
     }
   })
 }

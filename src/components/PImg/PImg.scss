@@ -1,0 +1,16 @@
+.p-image {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__img {
+    margin-right: 20px;
+  }
+
+  &__content {
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

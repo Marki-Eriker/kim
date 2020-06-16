@@ -1,5 +1,5 @@
 import React from 'react'
-import {InfoBlock, PLink, StructureBlock, Feedback, Picture, InfoBlockDisclose, PImg} from '../components';
+import {InfoBlock, PLink, StructureBlock, Feedback, Picture, InfoBlockDisclose, PImg, Post} from '../components';
 import {ContentSlider, ControlStationTable, FaqForm, LimitTable, SmallShipForm} from '../modules';
 
 export const makeContent = (data) => {
@@ -54,18 +54,20 @@ export const makeContent = (data) => {
         return ( <Picture image={item.picture}/> )
       case 'controlStation':
         return (
-          <React.Fragment>
+          <React.Fragment key={`controlStation-${index}`}>
             {item.controlStation.map((station, index) => (
             <ControlStationTable data={station} key={`station-${index}`}/>
             ))}
           </React.Fragment>
           )
       case 'limits':
-        return ( <LimitTable data={item.limits}/> )
+        return ( <LimitTable data={item.limits} key={`limits-${index}`}/> )
       case 'smallShipForm':
         return ( <SmallShipForm />)
       case 'miniMap':
-        return (<iframe width="100%" height="400" src={item.miniMap} frameBorder="0"/>)
+        return (<iframe width="100%" height="400" src={item.miniMap} frameBorder="0" key={`iframe-${index}`}/>)
+      case 'post':
+        return (<Post data={item.post} key={`post-${index}`}/>)
     }
   })
 }

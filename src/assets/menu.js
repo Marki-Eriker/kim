@@ -1,6 +1,7 @@
 export const menu = [
   {
     href: '/about/about',
+    realHref: '/about/about',
     title: 'Об учреждении',
     subItems: [
       {
@@ -52,6 +53,7 @@ export const menu = [
   },
   {
     href: '/documents/legal',
+    realHref: '/documents/legal',
     title: 'Документы',
     subItems: [
       {
@@ -78,6 +80,7 @@ export const menu = [
   },
   {
     href: '/navigation/schema',
+    realHref: '/navigation/schema',
     title: 'Навигация',
     subItems: [
       {
@@ -114,6 +117,7 @@ export const menu = [
   },
   {
     href: '/captainsService/portControl',
+    realHref: '/captainsService/portControl',
     title: 'Служба капитана Московского бассейна ВВП',
     subItems: [
       {
@@ -145,6 +149,7 @@ export const menu = [
   },
   {
     href: '/services/dispatcher',
+    realHref: '/services/dispatcher',
     title: 'Услуги',
     subItems: [
       {
@@ -215,25 +220,35 @@ export const menu = [
     ],
   },
   {
-    href: '/media',
+    href: '/media/interaction',
+    realHref: '/media/interaction',
     title: 'Медиа',
     subItems: [
       {
-        href: '/about',
+        href: '/media/news/[pageNumber]',
+        realHref: '/media/news/1',
         title: 'Новости',
       },
       {
-        href: '/about',
-        title: 'СМИ о нас',
+        href: '/media/pressAbout/[pageNumber]',
+        realHref: '/media/pressAbout/1',
+        title: 'Пресса о нас',
       },
       {
-        href: '/about',
+        href: '/media/tvAbout/[pageNumber]',
+        realHref: '/media/pressAbout/1',
+        title: 'Телевидение о нас',
+      },
+      {
+        href: '/media/[pageName]',
+        realHref: '/media/interaction',
         title: 'Взаимодействие со СМИ',
       },
     ],
   },
   {
     href: '/media',
+    realHref: '/media',
     title: 'Контакты',
   },
 ]

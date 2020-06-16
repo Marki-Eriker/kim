@@ -1,7 +1,8 @@
 import React from 'react'
 import {Footer, Head, Header, Sidebar} from '../index';
+import {PostPaginator} from '../../components';
 
-const InnerPage = ({menu, sidebar, title, pageContent}) => {
+const InnerPage = ({menu, sidebar, title, pageContent, paginator}) => {
   return (
     <React.Fragment>
     {/*<div className='container'>*/}
@@ -17,6 +18,9 @@ const InnerPage = ({menu, sidebar, title, pageContent}) => {
                 {title}
               </h1>
               {pageContent}
+              {paginator && (
+                <PostPaginator options={paginator}/>
+              )}
             </div>
           </div>
         </div>

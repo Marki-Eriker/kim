@@ -1,0 +1,78 @@
+.post-paginator {
+  height: 50px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__link {
+    text-decoration: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+
+    span {
+      color: #506399;
+      opacity: .3;
+      transition: opacity .2s linear;
+
+      &:hover, &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__arrow {
+    content: '';
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    opacity: .5;
+    cursor: pointer;
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border-bottom: 5px solid #506399;
+      border-left: 5px solid #506399;
+    }
+
+    &-left {
+      margin-right: 10px;
+
+      &:before {
+        transform: rotate(45deg)
+                   translateY(23%)
+                   translateX(-21%);
+        left: 50%;
+        top: 8px
+      }
+    }
+
+    &-right {
+      margin-left: 10px;
+
+      &:before {
+        transform: rotate(-135deg)
+                   translateY(-5%);
+        left: 7px;
+        top: 8px
+      }
+    }
+  }
+}

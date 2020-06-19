@@ -15,7 +15,7 @@ const Header = ({menu}) => {
 
           <div className='header__logo'>
             <Link href='/'>
-            <img src='/logo-win.png' alt='logo' className='header__logo-img'/>
+              <img src='/logo-75.svg' alt='logo' className='header__logo-img'/>
             </Link>
           </div>
 
